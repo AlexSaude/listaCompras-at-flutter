@@ -25,7 +25,11 @@ class MyHomePage extends StatefulWidget {
 }
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  void _decrementCounter(){
+    setState(() {
+      _counter--;
+    });
+  }
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -54,12 +58,24 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children:<Widget>[
+          FloatingActionButton(
+            onPressed: _decrementCounter,
+            child: const Icon(Icons.exposure_minus_1, color: Colors.white),
+            backgroundColor: Colors.blue,
+          ),
+          SizedBox(width: 1130.0),
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add, color: Colors.white),
+            backgroundColor: Colors.blue,
+          ),
+        ],
       ),
-    );
   }
 }
+
 
