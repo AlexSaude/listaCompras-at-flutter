@@ -49,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
                        Text('4 - sair'),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+              style: Theme.of(context).textTheme.headlineMedium,),
+            (_counter >4 ? Text('opção inválida'): Text('opção válida')),
           ],
         ),
       ),
@@ -62,3 +62,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
